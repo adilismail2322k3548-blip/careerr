@@ -1,5 +1,3 @@
-import { MapPin } from 'lucide-react';
-
 interface CareerRoadmapProps {
   roadmap: string | null;
 }

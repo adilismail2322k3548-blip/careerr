@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { getRecommendations, getStudentProfile } from '@/app/actions/assessment';
 import { Recommendation, StudentProfile } from '@/lib/types';
 import CareerCard from './components/CareerCard';
@@ -12,7 +12,6 @@ import Link from 'next/link';
 
 export default function ResultsContent() {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const studentId = searchParams.get('studentId');
 
   const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
@@ -104,7 +103,7 @@ export default function ResultsContent() {
 
         <Card className="bg-gradient-to-r from-blue-50 to-purple-50">
           <p className="text-gray-700">
-            Based on your interests, skills, and strengths, we've identified the top 3 career paths
+            Based on your interests, skills, and strengths, we&apos;ve identified the top 3 career paths
             that match your profile. Each recommendation includes a match percentage, confidence
             score, skill gap analysis, and a roadmap to help you achieve your goals.
           </p>

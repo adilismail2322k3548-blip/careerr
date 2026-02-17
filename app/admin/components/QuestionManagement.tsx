@@ -137,7 +137,7 @@ export default function QuestionManagement() {
               <select
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 value={formData.question_type}
-                onChange={(e) => setFormData({ ...formData, question_type: e.target.value as any })}
+                onChange={(e) => setFormData({ ...formData, question_type: e.target.value as 'interests' | 'skills' | 'strengths' })}
                 required
               >
                 <option value="interests">Interests</option>

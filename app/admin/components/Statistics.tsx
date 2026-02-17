@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { getStatistics } from '@/app/actions/assessment';
 import { Card, CardHeader, CardTitle, CardContent } from '@/app/components/ui/Card';
-import { BarChart, TrendingUp, Users, Award } from 'lucide-react';
+import { TrendingUp, Users, Award } from 'lucide-react';
 import { formatPercentage } from '@/lib/utils';
 
 interface Stats {

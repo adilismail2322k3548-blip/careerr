@@ -115,7 +115,7 @@ function calculateWeightedScore(scores: MatchScores, career: CareerOption): numb
 /**
  * Determine confidence score based on match percentage
  */
-export function determineConfidence(matchPercentage: number): 'high' | 'medium' | 'low' {
+function determineConfidence(matchPercentage: number): 'high' | 'medium' | 'low' {
   if (matchPercentage >= 75) return 'high';
   if (matchPercentage >= 50) return 'medium';
   return 'low';
@@ -124,7 +124,7 @@ export function determineConfidence(matchPercentage: number): 'high' | 'medium' 
 /**
  * Identify skill gaps - skills required for career that student doesn't have
  */
-export function identifySkillGaps(
+function identifySkillGaps(
   requiredSkills: string[],
   studentSkills: string[]
 ): string[] {
@@ -196,7 +196,7 @@ export async function calculateMatchScore(
 /**
  * Rank careers by match percentage and return top N
  */
-export function rankCareers(careerScores: CareerScore[], topN: number = 3): CareerScore[] {
+function rankCareers(careerScores: CareerScore[], topN: number = 3): CareerScore[] {
   // Sort by match percentage in descending order
   const sortedCareers = careerScores.sort((a, b) => b.matchPercentage - a.matchPercentage);
 

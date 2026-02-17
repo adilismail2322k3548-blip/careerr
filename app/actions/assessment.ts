@@ -1,7 +1,7 @@
 'use server';
 
 import { supabase } from '@/lib/supabase';
-import { StudentProfile, AssessmentResponse, Recommendation, CareerOption } from '@/lib/types';
+import { StudentProfile, AssessmentResponse, Recommendation } from '@/lib/types';
 import { generateCareerRecommendations } from './ai-logic';
 import { getAllCareers } from './careers';
 
@@ -224,7 +224,7 @@ export async function getStatistics() {
 
     const careerCounts: { [key: string]: number } = {};
     recommendations?.forEach(rec => {
-      const careerName = (rec.career_option as any)?.name;
+      const careerName = (rec.career_option as { name?: string })?.name;
       if (careerName) {
         careerCounts[careerName] = (careerCounts[careerName] || 0) + 1;
       }
