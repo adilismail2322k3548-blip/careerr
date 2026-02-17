@@ -30,10 +30,6 @@ export default function PersonalInfoStep({ initialData, onNext }: PersonalInfoSt
 
     if (!formData.marks_cgpa || formData.marks_cgpa <= 0) {
       newErrors.marks_cgpa = 'Please enter a valid marks/CGPA';
-    }
-
-    if (formData.marks_cgpa > 100 && formData.marks_cgpa <= 10) {
-      // Likely a mistake - CGPA should be 0-10
     } else if (formData.marks_cgpa > 100) {
       newErrors.marks_cgpa = 'Please enter a valid value (0-10 for CGPA or 0-100 for percentage)';
     }
